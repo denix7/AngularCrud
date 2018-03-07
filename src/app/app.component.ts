@@ -6,5 +6,30 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  title: string = 'Angular crud';
+
+  employees: [
+    {'name': 'Dennis', position: 'Programmer'},
+    {'name': 'Brian', position: 'DevOps'},
+    {'name': 'Padilla', position: 'DBadmin'}
+  ];
+
+  //este objeto contendra los datos temporales para luego actualizar el array
+  model: any = {};
+
+  addEmployee(): void{
+
+  }
+
+  deleteEmployee(): void{
+
+  }
+
+  editEmployee(): void{
+
+  }
+
+  updateEmployee(): void {
+
+  }
 }
