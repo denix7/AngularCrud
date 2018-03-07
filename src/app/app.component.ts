@@ -23,8 +23,11 @@ export class AppComponent {
     this.model = {};
   }
 
-  deleteEmployee(): void{
-
+  deleteEmployee(i): void{
+    var answer = confirm('Seguro que desea eliminar?');
+    if(answer){
+      this.employees.splice(i, 1); //splice agrega y elimina dado un indice
+    }
   }
 
   myvalue;
