@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title: string = 'Angular crud';
+  msg: string = '';
 
   employees = [
     {name: 'Dennis', position: 'Programmer', email: 'denis.1594@gmail.com'},
@@ -21,12 +22,14 @@ export class AppComponent {
   addEmployee(): void{
     this.employees.push(this.model);
     this.model = {};
+    this.msg = 'Campo agregado';
   }
 
   deleteEmployee(i): void{
     var answer = confirm('Seguro que desea eliminar?');
     if(answer){
       this.employees.splice(i, 1); //splice agrega y elimina dado un indice
+      this.msg = 'Campo eliminado';
     }
   }
 
@@ -44,8 +47,13 @@ export class AppComponent {
     for (let j=0; j<this.employees.length; j++){
       if(i==j){
         this.employees[i] = this.model2;
+        this.msg = 'Campo actualizado';
         this.model2 = {};
       }
     }
+  }
+
+  closeAlert(): void {
+    this.msg = '';
   }
 }

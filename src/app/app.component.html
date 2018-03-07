@@ -5,11 +5,11 @@
           <h1 class="text-center">{{title}}</h1>
       </div>
       <div class="col-sm-4">
-        <div class="alert alert-success alert-dismissable">
-          <a href="">
+        <div class="alert alert-success alert-dismissable" *ngIf="msg">
+          <a href="" class="close" (click)="closeAlert()">
             &times;
           </a>
-          mensaje aqui
+          {{msg}}
         </div>
       </div>
     </div>
