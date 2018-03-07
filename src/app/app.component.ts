@@ -16,20 +16,33 @@ export class AppComponent {
 
   //este objeto contendra los datos temporales para luego actualizar el array
   model: any = {};
+  model2: any = {};
 
   addEmployee(): void{
     this.employees.push(this.model);
+    this.model = {};
   }
 
   deleteEmployee(): void{
 
   }
 
-  editEmployee(): void{
+  myvalue;
+  editEmployee(i): void{
+    this.model2.name = this.employees[i].name;
+    this.model2.position = this.employees[i].position;
+    this.model2.email = this.employees[i].email;
 
+    this.myvalue = i;
   }
 
   updateEmployee(): void {
-
+    let i = this.myvalue;
+    for (let j=0; j<this.employees.length; j++){
+      if(i==j){
+        this.employees[i] = this.model2;
+        this.model2 = {};
+      }
+    }
   }
 }
