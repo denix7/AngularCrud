@@ -18,6 +18,7 @@ export class AppComponent {
   //este objeto contendra los datos temporales para luego actualizar el array
   model: any = {};
   model2: any = {};
+  hideUpdate: boolean = true;
 
   addEmployee(): void{
     this.employees.push(this.model);
@@ -35,6 +36,7 @@ export class AppComponent {
 
   myvalue;
   editEmployee(i): void{
+    this.hideUpdate = false;
     this.model2.name = this.employees[i].name;
     this.model2.position = this.employees[i].position;
     this.model2.email = this.employees[i].email;
